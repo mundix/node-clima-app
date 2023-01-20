@@ -17,8 +17,8 @@ class Busquedas {
       //Peticion HTTP
       // console.log(lugar);
       try {
-         const resp = await axios.get('https://reqres.in/api/users?page=2');
-         console.log(resp.data.per_page);   
+         const resp = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/Madrid.json?access_token=pk.eyJ1IjoibXVuZGl4MDEiLCJhIjoiY2xkNGJ0ZGQ1MDB0ajN2cGNwYmszZ3B3eSJ9.ORtvYlHRQmYXOlPZH8hmRg&limit=5&language=es');
+         console.log(resp.data);   
          return [];
       } catch (error) {
          return [];
