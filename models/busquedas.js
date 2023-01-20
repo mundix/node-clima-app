@@ -1,3 +1,4 @@
+import axios from "axios";
 
 
 class Busquedas {
@@ -12,7 +13,19 @@ class Busquedas {
    //REgresa un arreglo con todas las ciudades o lugares que coincida 
    //con este lugar 
    async ciudad( lugar ='') {
-      console.log(lugar);
+
+      //Peticion HTTP
+      // console.log(lugar);
+      try {
+         const resp = await axios.get('https://reqres.in/api/users?page=2');
+         console.log(resp.data.per_page);   
+         return [];
+      } catch (error) {
+         return [];
+      }
+      
+
+      
    }
 
 }

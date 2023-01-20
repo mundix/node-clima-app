@@ -7,7 +7,6 @@ const main = async () => {
    const busquedas = new Busquedas();
    let opt = '';
 
-   
 
    do {
       opt = await inquirerMenu();
@@ -16,7 +15,7 @@ const main = async () => {
          case 1:
             // Mostrar mensaje
             const lugar = await leerInput('Ciudad:  ');
-            console.log(lugar);
+            busquedas.ciudad(lugar);
             // Buscar los Lugagres
             
             // Seleccionar el lugar
