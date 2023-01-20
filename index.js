@@ -1,15 +1,42 @@
 
 import { inquirerMenu, leerInput, pausa } from "./helpers/inquirer.js"
+import { Busquedas } from "./models/busquedas.js";
+import colors from 'colors';
 
 const main = async () => {
-   // const text = await leerInput('Hola:'.green);
-   // console.log(text);
+   const busquedas = new Busquedas();
    let opt = '';
+
+   
+
    do {
-      // console.clear();
       opt = await inquirerMenu();
-      console.log({opt} );
-      console.log('\n');
+      
+      switch (opt) {
+         case 1:
+            // Mostrar mensaje
+            const lugar = await leerInput('Ciudad:  ');
+            console.log(lugar);
+            // Buscar los Lugagres
+            
+            // Seleccionar el lugar
+            
+            //Clima
+            
+            //Mostrar resultados
+            console.log('\n Informacion de la ciudad\n'.green);
+            console.log('ciudad:', );
+            console.log('lat:', );
+            console.log('lng:', );
+            console.log('Temperatura:', );
+            console.log('Minima:', );
+            console.log('Maxima:', );
+            break;
+      
+         default:
+            break;
+      }
+
       if( opt !==0 ) await pausa();
    }while(opt !== 0) 
 }
