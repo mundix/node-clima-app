@@ -69,6 +69,11 @@ const leerInput = async (message) => {
    return desc;
 }
 
+/**
+ * Listar Lugares desde array 
+ * @param {*} lugares []
+ * @returns int 
+ */
 const listarLugares = async (lugares = []) => {
 
    const choices = lugares.map((lugar, i) => {
