@@ -1,7 +1,11 @@
+import * as dotenv from 'dotenv';
+dotenv.config()
 
 import { inquirerMenu, leerInput, pausa } from "./helpers/inquirer.js"
 import { Busquedas } from "./models/busquedas.js";
 import colors from 'colors';
+
+console.log(process.env.MAPBOX_KEY);
 
 const main = async () => {
    const busquedas = new Busquedas();
