@@ -16,6 +16,12 @@ class Busquedas {
          language: 'es'
       }
    }
+   get paramsOpenWeather() {
+      return {
+         appid: process.env.OPENWEATHER_KEY,
+         lang: 'es'
+      }
+   }
 
    // Sera async por que voy a usar unafunciona http
    //REgresa un arreglo con todas las ciudades o lugares que coincida 
@@ -45,6 +51,35 @@ class Busquedas {
 
 
 
+   }
+
+   async climaLugar(lat, lon) {
+      try {
+         
+         //Peticion HTTP
+         const instance = axios.create({
+            baseURL: `https://api.openweathermap.org/data/2.5/weather`,
+            params: { 
+               lat,
+               lon,
+               ...this.paramsOpenWeather
+            }
+         });
+
+         //resp extraer la info de la data.
+
+         const resp = await instance.get();
+
+         return {
+            desc: resp.data.weather[0].description,
+            min: resp.data.main.temp_min,
+            max: resp.data.main.temp_max,
+            temp: resp.data.main.temp
+         }
+
+      } catch (error) {
+         console.log(error);
+      }
    }
 
 }
