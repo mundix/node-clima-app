@@ -51,7 +51,7 @@ const main = async () => {
          case 2:
             busquedas.historial.forEach( (lugar, index) => {
                const idx = `${index + 1}.` .green;
-               console.log( ` ${idex} ${lugar}`);
+               console.log( ` ${idx} ${lugar}`);
             })
             break;
       
